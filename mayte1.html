@@ -44,6 +44,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         // Iniciar la función cuando la página cargue
         window.onload = startRedirect;
     </script>
+    <style>
+        body {
+            background-color: #b3e0ff; /* Fondo azul claro */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .circle {
+            width: 150px; /* Ajusta el tamaño del círculo según lo necesites */
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .circle img {
+            width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .countdown {
+            font-weight: bold;
+            color: #0056b3; /* Color azul para la cuenta atrás */
+        }
+    </style>
    
 </head>
 <body>
@@ -51,7 +91,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8ZDHC6P"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <h1>Redirigiendo en <span id="countdown">3</span> segundos...</h1>
+    <div class="circle">
+        <img src="URL_DE_LA_IMAGEN" alt="Imagen de contacto">
+    </div>
+    <h1>Pronto te redirigimos en <span class="countdown" id="countdown">3</span> segundos...</h1>
     <p>Redirigiendo... Si no eres redirigido automáticamente, <a href="https://maps.app.goo.gl/5ab4AUh7NgPF6Rkt8">haz clic aquí</a>.</p>
 </body>
 </html>
