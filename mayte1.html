@@ -20,15 +20,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redireccionando...</title>
     <script>
-        // Reemplaza 'https://tu-destino.com' con la URL a la que quieres redirigir.
-        window.location.href = "https://maps.app.goo.gl/5ab4AUh7NgPF6Rkt8";
+        // Tiempo de espera en milisegundos
+        const waitTime = 3000;
+        const targetUrl = "https://maps.app.goo.gl/5ab4AUh7NgPF6Rkt8"; // Cambia esto a la URL deseada
+
+        // Función para iniciar la redirección
+        function startRedirect() {
+            let countdown = waitTime / 1000; // Convertir a segundos
+            const countdownElement = document.getElementById("countdown");
+
+            // Actualizar la cuenta atrás cada segundo
+            const interval = setInterval(() => {
+                countdown--;
+                countdownElement.innerText = countdown;
+
+                if (countdown <= 0) {
+                    clearInterval(interval); // Detener la cuenta atrás
+                    window.location.href = targetUrl; // Redirigir
+                }
+            }, 1000);
+        }
+
+        // Iniciar la función cuando la página cargue
+        window.onload = startRedirect;
     </script>
+   
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8ZDHC6P"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+    <h1>Redirigiendo en <span id="countdown">3</span> segundos...</h1>
     <p>Redirigiendo... Si no eres redirigido automáticamente, <a href="https://maps.app.goo.gl/5ab4AUh7NgPF6Rkt8">haz clic aquí</a>.</p>
 </body>
 </html>
